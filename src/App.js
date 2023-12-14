@@ -1,12 +1,13 @@
 import CustomInputNumber from './components/CustomInputNumber.js';
+import RoomAllocation from './components/RoomAllocation.js';
 import './App.css';
 
 export default function App() {
   return (
     <div>
-      <h1>CustomInputNumber</h1>
+      <h1>&lt;CustomInputNumber /&gt;</h1>
 
-      <h2>Enabled with all props assigned</h2>
+      <h2>enabled (min = 0, max = 10, step = 2)</h2>
       <CustomInputNumber
         min={0}
         max={10}
@@ -22,11 +23,23 @@ export default function App() {
         debug
       />
 
-      <h2>Disabled</h2>
+      <h2>disabled</h2>
       <CustomInputNumber
         name="foobar"
         value={0}
         disabled
+      />
+
+      <br />
+
+      <h1>&lt;RoomAllocation /&gt;</h1>
+      <h2>enabled (guest = 10, room = 3)</h2>
+      <RoomAllocation
+        guest={10}
+        room={3}
+        onChange={result => {
+          console.log(result);
+        }}
       />
     </div>
   );
